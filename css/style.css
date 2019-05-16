@@ -1,0 +1,206 @@
+body {
+  background-color: #888;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.stage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: 150px;
+  perspective: 1000px;
+}
+
+.cube {
+  position: relative;
+  transform-style: preserve-3d;
+  transform-origin: 100px 100px;
+  transform: rotateY(-180deg) translateX(-30px);
+  animation: rotate 10s infinite;
+}
+
+figure {
+  display: block;
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  width: 200px;
+  height: 200px;
+  border-radius: 40px;
+  border: solid 1px #EBD4FF;
+  background-color: #FFF;
+  box-shadow: 0 0 50px #FFF, inset 0 0 200px -50px rgba(38, 0, 77, 0.5);
+}
+figure.center1, figure.center2 {
+  box-shadow: initial;
+  width: 198px;
+  height: 198px;
+}
+
+.front {
+  transform: translateZ(100px);
+}
+
+.back {
+  transform: rotateY(180deg) translateZ(100px);
+}
+
+.top {
+  transform: rotateX(90deg) translateZ(100px);
+}
+
+.bottom {
+  transform: rotateX(-90deg) translateZ(100px);
+}
+
+.left {
+  transform: rotateY(-90deg) translateZ(100px);
+}
+
+.right {
+  transform: rotateY(90deg) translateZ(100px);
+}
+
+.center1, .center2 {
+  border-radius: initial;
+}
+
+.center2 {
+  transform: rotateY(90deg);
+}
+
+.one {
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(red, #B50000);
+  border-radius: 50%;
+}
+
+.twoes {
+  position: absolute;
+  width: 150px;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+  transform-origin: 75px, 30px;
+  transform: rotate(45deg) translate(-50%, 50%);
+}
+.twoes .two {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: radial-gradient(#333, #000);
+}
+
+.threes {
+  position: absolute;
+  width: 180px;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+  transform-origin: 90px, 30px;
+  transform: rotate(45deg) translate(-47%, 70%);
+}
+.threes .three {
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(#333, #000);
+  border-radius: 50%;
+}
+
+.fours {
+  display: flex;
+  width: 130px;
+  height: 130px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  justify-content: space-between;
+  align-content: space-between;
+  flex-wrap: wrap;
+}
+.fours .four {
+  margin: 5px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: radial-gradient(red, #B50000);
+}
+
+.fives {
+  display: flex;
+  width: 140px;
+  height: 140px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  justify-content: space-between;
+  align-content: space-between;
+  flex-wrap: wrap;
+}
+.fives .five {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: radial-gradient(#333, #000);
+  margin: 4px;
+}
+.fives .five.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.sixes {
+  display: flex;
+  width: 110px;
+  height: 150px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  justify-content: space-between;
+  align-content: space-between;
+  flex-wrap: wrap;
+}
+.sixes .six {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: radial-gradient(#333, #000);
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateZ(0deg) rotateY(0deg) rotateX(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg) rotateY(360deg) rotateX(360deg);
+  }
+}

@@ -1,0 +1,161 @@
+@mixin size($w,$h)
+	width: $w
+	height: $h
+@mixin ab_center
+	position: absolute
+	top: 50%
+	left: 50%
+	transform: translate(-50%,-50%)
+body
+	background-color: #888
+body,html
+	margin: 0
+	padding: 0
+*
+	box-sizing: border-box
+	margin: 0
+	padding: 0
+
+.stage
+	+ab_center
+	width: 150px
+	height: 150px
+	perspective: 1000px
+
+
+	
+.cube
+	position: relative
+	transform-style: preserve-3d
+	transform-origin: 100px 100px
+	transform: rotateY(-180deg) translateX(-30px)
+	animation: rotate 10s infinite
+
+figure
+	display: block
+	position: absolute
+	padding: 0
+	margin: 0
+	+size(200px, 200px)
+	border-radius: 40px
+	border: solid 1px #EBD4FF
+	background-color: #FFF
+	box-shadow: 0 0 50px #FFF,inset 0 0 200px -50px rgba(#26004D,0.5)
+	&.center1,&.center2
+		box-shadow: initial
+		+size(198px, 198px)
+	
+	
+
+.front
+	transform: translateZ(100px)
+	// background-color: #FFF
+.back
+	transform: rotateY(180deg) translateZ(100px)
+	// background-color: red
+.top
+	transform: rotateX(90deg) translateZ(100px)
+	// background-color: blue
+.bottom
+	transform: rotateX(-90deg) translateZ(100px)
+	// background-color: green
+.left
+	transform: rotateY(-90deg) translateZ(100px)
+	// background-color: purple
+.right
+	transform: rotateY(90deg) translateZ(100px)
+	// background-color: yellow
+.center1,.center2
+	border-radius: initial
+.center2
+	transform: rotateY(90deg)
+
+.one
+	+size(70px,70px)
+	+ab_center
+	background: radial-gradient(red,#B50000)
+	border-radius: 50%
+
+.twoes
+	position: absolute
+	+size(150px, 60px)
+	display: flex
+	justify-content: space-between
+	align-items: center
+	top: 50%
+	left: 50%
+	transform-origin: 75px, 30px
+	transform: rotate(45deg) translate(-50%,50%)
+	.two
+		+size(50px, 50px)
+		border-radius: 50%
+		background: radial-gradient(#333,#000)
+
+.threes
+	position: absolute
+	+size(180px, 60px)
+	display: flex
+	justify-content: space-between
+	align-items: center
+	top: 50%
+	left: 50%
+	transform-origin: 90px, 30px
+	transform: rotate(45deg) translate(-47%,70%)
+	.three
+		+size(40px, 40px)
+		background: radial-gradient(#333,#000)
+		border-radius: 50%
+	
+.fours
+	display: flex
+	+size(130px, 130px)
+	+ab_center
+	justify-content: space-between
+	align-content: space-between
+	flex-wrap: wrap
+	.four
+		margin: 5px
+		+size(40px, 40px)
+		border-radius: 50%
+		background: radial-gradient(red,#B50000)
+
+.fives
+	display: flex
+	+size(140px, 140px)
+	+ab_center
+	justify-content: space-between
+	align-content: space-between
+	flex-wrap: wrap
+	.five
+		+size(40px, 40px)
+		border-radius: 50%
+		background: radial-gradient(#333,#000)
+		margin: 4px
+		&.center
+			margin: 0
+			+ab_center
+
+.sixes
+	display: flex
+	+size(110px, 150px)
+	+ab_center
+	justify-content: space-between
+	align-content: space-between
+	flex-wrap: wrap
+	.six
+		+size(40px, 40px)
+		border-radius: 50%
+		background: radial-gradient(#333,#000)
+
+
+
+
+
+
+@keyframes rotate
+	0%
+		transform: rotateZ(0deg)rotateY(0deg)rotateX(0deg)
+		// transform: rotateY(0) translateX(-18.2px)
+	100%
+		transform: rotateZ(360deg)rotateY(360deg)rotateX(360deg)
+		// transform: rotateY(360deg) translateX(-18.2px)
